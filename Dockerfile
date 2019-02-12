@@ -30,10 +30,11 @@ RUN apt-get build-dep -y chromium
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb
 WORKDIR /home/ungoogler/build
-
-RUN git clone https://github.com/Eloston/ungoogled-chromium.git && cd ungoogled-chromium/
+RUN git clone https://github.com/Eloston/ungoogled-chromium.git
+WORKDIR /home/ungoogler/build/ungoogled-chromium
 RUN mkdir -p build/src && ls
-RUN python get_package.py debian_buster build/src/debian && cd build/src
+RUN ./get_package.py debian_buster build/src/debian
+WORKDIR /home/ungoogler/build/ungoogled-chromium/build/src
 RUN debian/rules setup-local-src
 RUN dpkg-buildpackage -b -uc
 
