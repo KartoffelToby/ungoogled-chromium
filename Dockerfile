@@ -29,6 +29,9 @@ RUN apt-get install -y clang-6.0 lld-6.0 llvm-6.0-dev python-jinja2 \
 RUN apt-get build-dep -y chromium
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb
+
+RUN apt-get install --yes clang-3.9 llvm-3.9-dev python-jinja2 time flex yasm xvfb gperf bison valgrind x11-apps xfonts-base libglew-dev libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev mesa-common-dev libxt-dev libre2-dev libgbm-dev libpng-dev libxss-dev libelf-dev libvpx-dev libpci-dev libcap-dev libdrm-dev libicu-dev libffi-dev libkrb5-dev libexif-dev libflac-dev libudev-dev libopus-dev libwebp-dev libxtst-dev libsrtp-dev libjpeg-dev libxml2-dev libgtk-3-dev libxslt1-dev liblcms2-dev libpulse-dev libpam0g-dev libsnappy-dev libgconf2-dev libavutil-dev libavcodec-dev libavformat-dev libglib2.0-dev libasound2-dev libsqlite3-dev libjsoncpp-dev libspeechd-dev libminizip-dev libhunspell-dev libharfbuzz-dev libusb-1.0-0-dev libmodpbase64-dev libnss3-dev libnspr4-dev libcups2-dev libevent-dev libjs-jquery libjs-excanvas libjs-jquery-flot libgcrypt20-dev libva-dev
+
 WORKDIR /home/ungoogler/build
 RUN git clone https://github.com/Eloston/ungoogled-chromium.git
 WORKDIR /home/ungoogler/build/ungoogled-chromium
