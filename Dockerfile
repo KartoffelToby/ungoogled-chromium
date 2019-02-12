@@ -25,7 +25,7 @@ RUN apt-get install -y clang-6.0 lld-6.0 llvm-6.0-dev python-jinja2 \
 	libwebp-dev libxtst-dev libgtk-3-dev liblcms2-dev libpulse-dev \
     libasound2-dev libusb-1.0-0-dev libevent-dev libgcrypt20-dev libva-dev \
     libvpx-dev debhelper libglew-dev git packaging-dev python3 ninja-build libllvm-7-ocaml-dev libllvm7 llvm-7 llvm-7-dev llvm-7-doc llvm-7-examples llvm-7-runtime \
-    clang-7 clang-tools-7 clang-7-doc libclang-common-7-dev libclang-7-dev libclang1-7 clang-format-7 python-clang-7 lld-7 libglew-dev
+    clang-7 clang-tools-7 clang-7-doc libclang-common-7-dev libclang-7-dev libclang1-7 clang-format-7 python-clang-7 lld-7 libglew-dev libglew-dev
 RUN apt-get build-dep -y chromium
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0_1.4.5~20130609~dfsg-2_amd64.deb
 RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb && dpkg -i libsrtp0-dev_1.4.5~20130609~dfsg-2_amd64.deb
