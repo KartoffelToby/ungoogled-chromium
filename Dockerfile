@@ -32,8 +32,8 @@ RUN wget http://ftp.us.debian.org/debian/pool/main/s/srtp/libsrtp0-dev_1.4.5~201
 WORKDIR /home/ungoogler/build
 
 RUN git clone https://github.com/Eloston/ungoogled-chromium.git && cd ungoogled-chromium/
-RUN mkdir -p build/src
-RUN ./get_package.py debian_buster build/src/debian && cd build/src
+RUN mkdir -p build/src && ls
+RUN python get_package.py debian_buster build/src/debian && cd build/src
 RUN debian/rules setup-local-src
 RUN dpkg-buildpackage -b -uc
 
