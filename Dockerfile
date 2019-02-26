@@ -4,6 +4,8 @@ RUN echo 'deb-src http://ftp.debian.org/debian sid main' >> /etc/apt/sources.lis
 RUN apt-get update && apt-get install wget gnupg2 -y
 RUN echo 'deb http://apt.llvm.org/unstable/ llvm-toolchain-7 main' >> /etc/apt/sources.list
 RUN echo 'deb-src http://apt.llvm.org/unstable/ llvm-toolchain-7 main' >> /etc/apt/sources.list
+RUN echo 'deb http://apt.llvm.org/unstable/ llvm-toolchain-3.9 main' >> /etc/apt/sources.list
+RUN echo 'deb-src http://apt.llvm.org/unstable/ llvm-toolchain-3.9 main' >> /etc/apt/sources.list
 RUN echo 'Package: *' >> /etc/apt/preferences.d/be-stable
 RUN echo 'Pin: release a=stable-backports' >> /etc/apt/preferences.d/be-stable
 RUN echo 'Pin-Priority: 100' >> /etc/apt/preferences.d/be-stable
